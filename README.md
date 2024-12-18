@@ -1,1 +1,74 @@
-# Homework-Interview
+# Interview Homework
+This repo contains the homework for interview candidates.
+
+## Instructions
+- Fork this repository and share it with us. @sergane1313 @pcbulai
+- Use javascript/typescript. 
+- Use the setup we have already created.
+- Have fun 😁 (ping us when you finish the homework)
+
+### Duration
+We expect this challenge to take between 1h - 2h of continuous coding.
+
+## What are we looking for?
+- An efficient implementation.
+- Minimal styling (nothing fancy, we would like the items to be aligned).
+- Good grasp of javascript/typescript knowledge.
+- Good grasp of data manipulation.
+- A commit history, not one single commit with the whole code.
+
+## Homework description
+Create a dynamic movie search application that interacts with the OMDb API, updates data in real-time as the user types, and categorizes movies by decades based on the search results
+
+## Features to Implement
+
+### 1. Search Bar
+- Create a search bar where the user can type a query. (e.g. "batman")
+- While typing, display the current query text below the search bar in real-time.
+
+### 2. API Integration
+- On pressing "Enter", make an API call to:  
+  `http://www.omdbapi.com/?i=tt3896198&apikey=<api_key>&s=<query>`
+- Parse the response to retrieve the movie titles and their release years.
+
+### 3. Categorization by Decades
+- From the API data, extract the decades of the movies (e.g., 2020s, 2010s, etc.).
+- Take the movies from the most recent 4 decades that are available in the data, and group them by decades.
+  - For example, if data contains movies from 1975 to 2023, show only: `2020s, 2010s, 2000s, 1990s`.
+- Each decade group should display the **first 3 movies** of that decade, sorted by year (ascending).
+
+### 4. Load More Button
+- Below each decade group, include a "Load More" button.
+- On clicking "Load More", display the next 3 movies from that decade.
+
+## API usage
+
+Please use the OMDb API at the following link: [here](https://www.omdbapi.com/apikey.aspx?__EVENTTARGET=freeAcct&__EVENTARGUMENT=&__LASTFOCUS=&__VIEWSTATE=%2FwEPDwUKLTIwNDY4MTIzNQ9kFgYCAQ9kFgICBw8WAh4HVmlzaWJsZWhkAgIPFgIfAGhkAgMPFgIfAGhkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYDBQtwYXRyZW9uQWNjdAUIZnJlZUFjY3QFCGZyZWVBY2N0oCxKYG7xaZwy2ktIrVmWGdWzxj%2FDhHQaAqqFYTiRTDE%3D&__VIEWSTATEGENERATOR=5E550F58&__EVENTVALIDATION=%2FwEdAAU%2BO86JjTqdg0yhuGR2tBukmSzhXfnlWWVdWIamVouVTzfZJuQDpLVS6HZFWq5fYpioiDjxFjSdCQfbG0SWduXFd8BcWGH1ot0k0SO7CfuulHLL4j%2B3qCcW3ReXhfb4KKsSs3zlQ%2B48KY6Qzm7wzZbR&at=freeAcct&Email=)
+
+Choose a FREE account type, and you will receive the API (with the key) for usage via mail. In my case the API looked like this: http://www.omdbapi.com/?i=tt3896198&apikey=12345678
+### The response looks like this:
+```
+{
+  "Search": [
+    {
+      "Title": "Batman Begins",
+      "Year": "2005",
+      "imdbID": "tt0372784",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BODIyMDdhNTgtNDlmOC00MjUxLWE2NDItODA5MTdkNzY3ZTdhXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    ...
+    {
+      "Title": "Batman v Superman: Dawn of Justice (Ultimate Edition)",
+      "Year": "2016",
+      "imdbID": "tt18689424",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BOTRlNWQwM2ItNjkyZC00MGI3LThkYjktZmE5N2FlMzcyNTIyXkEyXkFqcGdeQXVyMTEyNzgwMDUw._V1_SX300.jpg"
+    }
+  ],
+  "totalResults": "586",
+  "Response": "True"
+}
+```
+
+
