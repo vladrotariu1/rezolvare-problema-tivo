@@ -1,0 +1,24 @@
+.movie-poster-container {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 400px;
+}
+
+.movie-poster-image-container {
+    height: 80%;
+}
+
+.movie-poster-image {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.movie-poster-metadata-container {
+    display: inline;
+}
+
+.movie-poster-metadata-container p {
+
+}
