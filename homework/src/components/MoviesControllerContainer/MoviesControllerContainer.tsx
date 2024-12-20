@@ -1,7 +1,7 @@
 import { MovieDto } from '../../models/MovieDto.ts';
 import {useMemo, useState} from 'react';
 import './MoviesControllerContainer.css';
-import MoviePoster from '../MoviePoster/MoviePoster.tsx';
+import MoviesPerDecade from '../MoviesPerDecade/MoviesPerDecade.tsx';
 
 function groupMoviesByDecade(movies: MovieDto[]): Record<string, MovieDto[]> {
   // Parse years from the movies and deduplicate decades
@@ -42,7 +42,20 @@ function MoviesControllerContainer({ movies }: MoviesProps) {
           </button>
         ))}
       </div>
-        { moviesPerDecades[selectedDecade] && moviesPerDecades[selectedDecade].map(movie => <MoviePoster key={movie.imdbID} movie={movie} />) }
+      <div>
+        {
+          displayedDecades.map(
+            decade =>
+              <div
+                key={decade}
+                style={{
+                  display: selectedDecade === decade ? 'block' : 'none'
+              }}>
+                <MoviesPerDecade key={decade} movies={moviesPerDecades[decade]} />
+              </div>
+          )
+        }
+      </div>
     </div>
   );
 }

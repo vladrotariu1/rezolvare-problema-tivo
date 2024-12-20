@@ -72,7 +72,7 @@ function App() {
         error && <p><strong>{error}</strong></p>
       }
       {
-        movies && !error && <MoviesControllerContainer movies={movies} />
+        movies && !error && movieNameQuery && <MoviesControllerContainer movies={movies} />
       }
     </div>
   );
