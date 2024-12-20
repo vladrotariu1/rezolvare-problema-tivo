@@ -8,7 +8,7 @@ This repo contains the homework for interview candidates.
 - Have fun 😁 (ping us when you finish the homework)
 
 ### Duration
-We expect this challenge to take between 1h - 2h of continuous coding.
+We expect this challenge to take between 1:30h - 2:30h of continuous coding (It took us an average of 2h 10m).
 
 ## What are we looking for?
 - An efficient implementation.
@@ -30,6 +30,7 @@ Create a dynamic movie search application that interacts with the OMDb API, upda
 - On pressing "Enter", make an API call to:  
   `http://www.omdbapi.com/?i=tt3896198&apikey=<api_key>&s=<query>`
 - Parse the response to retrieve the movie titles and their release years.
+- Create a .env file where you will store a VITE_OMDB_API_KEY variable with the API key.
 
 ### 3. Categorization by Decades
 - From the API data, extract the decades of the movies (e.g., 2020s, 2010s, etc.).
@@ -43,9 +44,9 @@ Create a dynamic movie search application that interacts with the OMDb API, upda
 
 ## API usage
 
-Please use the OMDb API at the following link: [here](https://www.omdbapi.com/apikey.aspx?__EVENTTARGET=freeAcct&__EVENTARGUMENT=&__LASTFOCUS=&__VIEWSTATE=%2FwEPDwUKLTIwNDY4MTIzNQ9kFgYCAQ9kFgICBw8WAh4HVmlzaWJsZWhkAgIPFgIfAGhkAgMPFgIfAGhkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYDBQtwYXRyZW9uQWNjdAUIZnJlZUFjY3QFCGZyZWVBY2N0oCxKYG7xaZwy2ktIrVmWGdWzxj%2FDhHQaAqqFYTiRTDE%3D&__VIEWSTATEGENERATOR=5E550F58&__EVENTVALIDATION=%2FwEdAAU%2BO86JjTqdg0yhuGR2tBukmSzhXfnlWWVdWIamVouVTzfZJuQDpLVS6HZFWq5fYpioiDjxFjSdCQfbG0SWduXFd8BcWGH1ot0k0SO7CfuulHLL4j%2B3qCcW3ReXhfb4KKsSs3zlQ%2B48KY6Qzm7wzZbR&at=freeAcct&Email=)
+Please use the OMDb API at the following link: [here](https://www.omdbapi.com/apikey.aspx)
 
-Choose a FREE account type, and you will receive the API (with the key) for usage via mail. In my case the API looked like this: http://www.omdbapi.com/?i=tt3896198&apikey=12345678
+Choose a FREE account type, and you will receive the API (with the key) for usage via mail (Please open the validation URL received in your email). In my case the API looked like this: http://www.omdbapi.com/?i=tt3896198&apikey=12345678
 ### The response looks like this:
 ```
 {
