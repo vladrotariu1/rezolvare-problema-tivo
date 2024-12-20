@@ -1,21 +1,7 @@
 import {ChangeEvent, useCallback, useEffect, useState} from 'react';
+import {OmdbGetResponse} from './models/OmdbGetResponse.ts';
 
 const omdbApiKey: string = import.meta.env.VITE_OMDB_API_KEY;
-
-interface MovieDto {
-  "Title": string,
-  "Year": string,
-  "imdbID": string,
-  "Type": string,
-  "Poster": string
-}
-
-interface OmdbGetResponse {
-  "Response": string,
-  "Search"?: MovieDto[],
-  "totalResults"?: string,
-  "Error"?: string,
-}
 
 function App() {
   const [movieNameQuery, setMovieNameQuery] = useState('');
