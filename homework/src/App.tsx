@@ -1,7 +1,40 @@
-import {ChangeEvent, useState} from 'react';
+import {ChangeEvent, useCallback, useEffect, useState} from 'react';
+
+const omdbApiKey: string = import.meta.env.VITE_OMDB_API_KEY;
+
+interface MovieDto {
+  "Title": string,
+  "Year": string,
+  "imdbID": string,
+  "Type": string,
+  "Poster": string
+}
+
+interface OmdbGetResponse {
+  "Response": string,
+  "Search"?: MovieDto[],
+  "totalResults"?: string,
+  "Error"?: string,
+}
 
 function App() {
   const [movieNameQuery, setMovieNameQuery] = useState('');
+
+  const getFromApi = useCallback(async (apiUrl: string) => {
+    const response = await fetch(apiUrl);
+    const data: OmdbGetResponse = await response.json();
+
+    console.log(data);
+  }, []);
+
+  useEffect(() => {
+    if (!movieNameQuery) {
+      return
+    }
+    const omdbApiUrl = `http://www.omdbapi.com/?i=tt3896198&apikey=${omdbApiKey}&s=${movieNameQuery}`
+    getFromApi(omdbApiUrl);
+
+  }, [getFromApi, movieNameQuery]);
 
   const handleOnMovieNameQueryInput = (e: ChangeEvent<HTMLInputElement>) => {
     setMovieNameQuery(e.target.value);
